@@ -33,7 +33,7 @@ def count_values(data, param):
     return cnt
 
 
-@pelayanan_bp.route('/card_pasien')
+@pelayanan_bp.route('/pelayanan/card_pasien')
 def card_pasien():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -68,7 +68,7 @@ def card_pasien():
 
 
 # Detail Card kunjungan (pop up table)
-@pelayanan_bp.route('/detail_card_pasien')
+@pelayanan_bp.route('/pelayanan/detail_card_pasien')
 def detail_card_pasien():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -100,7 +100,7 @@ def detail_card_pasien():
     return jsonify(data)
 
 
-@pelayanan_bp.route('/mutu_pelayanan')
+@pelayanan_bp.route('/pelayanan/mutu_pelayanan')
 def mutu_palayanan():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -109,7 +109,7 @@ def mutu_palayanan():
     return jsonify({'response': 'standar mutu pelayanan'})
 
 
-@pelayanan_bp.route('/kelas_perawatan')
+@pelayanan_bp.route('/pelayanan/kelas_perawatan')
 def kelas_perawatan():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -141,7 +141,7 @@ def kelas_perawatan():
     return jsonify(result)
 
 
-@pelayanan_bp.route('/kepuasan_pelayanan')
+@pelayanan_bp.route('/pelayanan/kepuasan_pelayanan')
 def kepuasan_pelayanan():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -150,7 +150,7 @@ def kepuasan_pelayanan():
     return jsonify({'response': 'ini data Kepuasan Pelayanan'})
 
 
-@pelayanan_bp.route('/kelompok_pasien')
+@pelayanan_bp.route('/pelayanan/kelompok_pasien')
 def kelompok_pasien():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -184,7 +184,7 @@ def kelompok_pasien():
     return jsonify(result)
 
 
-@pelayanan_bp.route('/pelayanan_dokter')
+@pelayanan_bp.route('/pelayanan/pelayanan_dokter')
 def pelayanan_dokter():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -220,7 +220,7 @@ def pelayanan_dokter():
     return jsonify(result)
 
 
-@pelayanan_bp.route('/top_diagnosa')
+@pelayanan_bp.route('/pelayanan/top_diagnosa')
 def top_diagnosa():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -257,7 +257,7 @@ def top_diagnosa():
     return jsonify(result)
 
 
-@pelayanan_bp.route('/pendidikan')
+@pelayanan_bp.route('/pelayanan/pendidikan')
 def pendidikan():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
@@ -266,7 +266,7 @@ def pendidikan():
     return jsonify({'response': 'ini data Pendidikan'})
 
 
-@pelayanan_bp.route('/pekerjaan')
+@pelayanan_bp.route('/pelayanan/pekerjaan')
 def pekerjaan():
     tgl_awal = request.args.get('tgl_awal')
     tgl_akhir = request.args.get('tgl_akhir')
