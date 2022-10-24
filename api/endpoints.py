@@ -4,11 +4,9 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from flask import Blueprint, jsonify, request
 
-from api.config import get_connection
 from api.query import *
 
 pelayanan_bp = Blueprint("pelayanan", __name__)
-engine = get_connection()
 
 
 def get_default_date(tgl_awal, tgl_akhir):
