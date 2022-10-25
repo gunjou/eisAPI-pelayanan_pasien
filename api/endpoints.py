@@ -240,13 +240,17 @@ def pelayanan_dokter():
     # Extract data as (dataframe)
     cnt_name = count_values(tmp, 'nama')
     cnts_id = count_values(tmp, 'id_dokter')
-    data = [{"name": x, "value": y, "id_dokter": z} for x, y in cnt_name.items() for z, _ in cnts_id.items()]
+    id_dokter, name, value = list(cnts_id.keys()), list(cnt_name.keys()), list(cnt_name.values())
+    data = []
+    for i in range(len(cnts_id)):
+        data.append({"id": id_dokter[i], "name": name[i], "value": value[i]})
+    # sort_data = sorted(data, key=lambda d: d['value'], reverse=True)
     
     # Define return result as a json
     result = {
         "judul": 'Pelayanan Dokter',
         "label": 'Pelayanan Pasien',
-        "data": data,
+        "data": data, #sort_data,
         "tgl_filter": {
             "tgl_awal": tgl_awal,
             "tgl_akhir": tgl_akhir
